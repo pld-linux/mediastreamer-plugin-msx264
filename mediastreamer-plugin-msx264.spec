@@ -2,7 +2,7 @@ Summary:	H264 video codec for mediastreamer
 Summary(pl.UTF-8):	Kodek obrazu H264 dla mediastreamera
 Name:		mediastreamer-plugin-msx264
 Version:	1.4.3
-Release:	2
+Release:	3
 License:	GPL v2+
 Group:		Libraries
 Source0:	http://download-mirror.savannah.gnu.org/releases/linphone/plugins/sources/msx264-%{version}.tar.gz
