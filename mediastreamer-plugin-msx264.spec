@@ -1,13 +1,15 @@
 Summary:	H264 video codec for mediastreamer
 Summary(pl.UTF-8):	Kodek obrazu H264 dla mediastreamera
 Name:		mediastreamer-plugin-msx264
-Version:	1.5.3
-Release:	3
+Version:	1.5.4
+Release:	1
 License:	GPL v2+
 Group:		Libraries
-Source0:	http://linphone.org/releases/sources/plugins/msx264/msx264-%{version}.tar.gz
-# Source0-md5:	8dc5482d12bdb5d89bdfa9f71163e08a
-URL:		https://github.com/Distrotech/msx264
+#Source0Download: https://gitlab.linphone.org/BC/public/msx264/-/tags
+Source0:	https://gitlab.linphone.org/BC/public/msx264/-/archive/%{version}/msx264-%{version}.tar.bz2
+# Source0-md5:	3829813876f33bd30c50519d66b07c18
+Patch0:		msx264-ms2-update.patch
+URL:		https://gitlab.linphone.org/BC/public/msx264
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	mediastreamer-devel >= 2.7.0
@@ -29,6 +31,7 @@ Ten pakiet udostępnia wtyczkę mediastreamera do kodeka obrazu H264.
 
 %prep
 %setup -q -n msx264-%{version}
+%patch0 -p1
 
 %build
 %{__libtoolize}
@@ -36,7 +39,8 @@ Ten pakiet udostępnia wtyczkę mediastreamera do kodeka obrazu H264.
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure
+%configure \
+	--disable-strict
 
 %{__make}
 
