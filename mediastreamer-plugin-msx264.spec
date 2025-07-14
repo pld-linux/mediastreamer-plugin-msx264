@@ -31,7 +31,7 @@ Ten pakiet udostępnia wtyczkę mediastreamera do kodeka obrazu H264.
 
 %prep
 %setup -q -n msx264-%{version}
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 %{__libtoolize}
